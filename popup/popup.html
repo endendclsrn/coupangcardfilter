@@ -1,0 +1,49 @@
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>쿠팡 카드필터</title>
+</head>
+
+<body>
+    <style>
+        body {
+            width: 150px;
+            height: 130px;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .row {
+            height: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .row span,
+        input {
+            float: left;
+            display: flex;
+        }
+    </style>
+    <img src="/images/logo.png">
+    <div style="text-align: center">카드 할인 필터</div>
+    <div class="row">
+        <span>필터 : </span><input type="checkbox" id="card_filter">
+    </div>
+    <div class="row">
+        <span>할인률 : </span><input type="number" id="card_discount" min="0" max="100">
+    </div>
+    <div class="row">
+        <span>할인계산 : </span><input type="checkbox" id="card_calc">
+    </div>
+
+
+    <script src="./popup.js"></script>
+</body>
+
+</html>

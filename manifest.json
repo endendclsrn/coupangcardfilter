@@ -1,0 +1,23 @@
+{
+    "name": "Coupang Card Discount Filter",
+    "description": "Made by Jagukim",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": ["https://*.coupang.com/*"],
+            "js": ["./contentScripts/run.js"],
+            "css": ["./contentScripts/style.css"],
+            "run_at": "document_start"
+        }
+    ],
+    "action": {
+        "default_popup": "./popup/popup.html"
+    },
+    "icons": {
+        "16": "/images/icon.png",
+        "32": "/images/icon.png",
+        "48": "/images/icon.png",
+        "128": "/images/icon.png"
+    }
+}
