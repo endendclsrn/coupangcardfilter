@@ -11,7 +11,7 @@ function card_discount_filter() {
     document.querySelectorAll(".new-price-value").forEach((element) => {
         element.remove();
     });
-    document.querySelectorAll(".baby-product.renew-badge").forEach((element) => {
+    document.querySelectorAll(".baby-product, .search-product").forEach((element) => {
         let discount_int = NaN;
         let discount_str = element.querySelector(".ccid-txt")?.innerHTML;
         try {
@@ -20,7 +20,12 @@ function card_discount_filter() {
         if(!card_filter) {
             element.style.display = "block";
             element.style.height  = "calc(460px + 40px)";
-            element.querySelector(".baby-product-wrap").style.height = "auto";
+            if(element.querySelector(".baby-product-wrap")) {
+                element.querySelector(".baby-product-wrap").style.height = "auto";
+            }
+            else if(element.querySelector(".search-product-wrap")) {
+                element.querySelector(".search-product-wrap").style.height = "auto";
+            }
         }
         else {
             if(!element.querySelector(".ccid-badge")) {
@@ -29,7 +34,12 @@ function card_discount_filter() {
             }
 
             element.style.height  = "calc(460px + 40px)";
-            element.querySelector(".baby-product-wrap").style.height = "auto";
+            if(element.querySelector(".baby-product-wrap")) {
+                element.querySelector(".baby-product-wrap").style.height = "auto";
+            }
+            else if(element.querySelector(".search-product-wrap")) {
+                element.querySelector(".search-product-wrap").style.height = "auto";
+            }
             if(discount_int < card_discount) {
                 element.style.display = "none";
             }
@@ -63,7 +73,7 @@ function card_discount_filter() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".baby-product.renew-badge").forEach((element) => {
+    document.querySelectorAll(".baby-product, .search-product").forEach((element) => {
         card_discount_filter();
     })
 });
